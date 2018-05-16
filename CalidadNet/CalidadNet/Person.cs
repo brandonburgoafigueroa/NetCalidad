@@ -4,54 +4,59 @@ using System.Text;
 
 namespace UnitTest
 {
-    class Person
+    public class Person
     {
-        string m_FName;
-        string m_LName;
-        int m_Age;
-        float m_cash;
+        string Fname;
+        string Lname;
+        int _age;
+        float _cash;
 
-        Person()
+        public Person()
         {
-            m_FName = "";
-            m_LName = "";
-            m_Age = 0;
-            m_cash = 0;
+            Fname = "";
+            Lname = "";
+            _age = 0;
+            _cash = 0;
         }
 
-        public Person(string strFName, string strLName, int iAge)
+        public Person(string Fname, string Lname, int Age)
         {
-            m_FName = strFName;
-            m_LName = strLName;
-            m_Age = iAge;
-            m_cash = 100000;
+            this.Fname = Fname;
+            this.Lname = Lname;
+            _age = Age;
+            _cash = 100000;
         }
 
 
 
         public int Age
         {
-            get { return m_Age; }
+            get { return _age; }
         }
 
         public string FullName
         {
-            get { return m_FName + " " + m_LName; }
+            get { return Fname + " " + Lname; }
         }
 
         public float CashBalance
         {
-            get { return m_cash; }
+            get { return _cash; }
         }
 
 
-        public bool BuyCar(float fCost)
+        public bool BuyCar(float Cost)
         {
-            m_cash = m_cash + fCost;
-            if (m_cash >= 0)
+            //_cash = _cash + Cost;
+            _cash = _cash - Cost;
+            if (_cash >= 0)
+            {
                 return true;
+            }
             else
+            {
                 return false;
+            }
         }
     }
 }
