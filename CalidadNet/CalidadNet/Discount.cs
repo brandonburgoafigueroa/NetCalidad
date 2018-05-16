@@ -5,7 +5,7 @@ using System.Text;
 namespace UnitTest
 {
     
-    class Discount
+    public class Discount
     {
         public double calculateDiscount(double SalesAmnt)
         {
