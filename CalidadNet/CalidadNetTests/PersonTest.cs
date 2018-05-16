@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using UnitTest;
 
-namespace UnitTest
+namespace CalidadNetTests
 {
     [TestClass]
     public class PersonTest

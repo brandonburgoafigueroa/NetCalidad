@@ -6,22 +6,22 @@ namespace UnitTest
 {
     public class Account
     {
-        private float balance;
-        private float minimumBalance = 10.00F;
+        private float _balance;
+        private float _minimumBalance = 10.00F;
 
         public void Deposit(float amount)
         {
-            balance += amount;
+            _balance += amount;
         }
 
         public void Withdraw(float amount)
         {
-            balance -= amount;
+            _balance -= amount;
         }
 
         public void TransferFunds(Account destination, float amount)
         {
-            if (balance - amount < minimumBalance)
+            if (_balance - amount < _minimumBalance)
                 throw new InsufficientFundsException();
             destination.Deposit(amount);
             Withdraw(amount);
@@ -29,13 +29,13 @@ namespace UnitTest
 
         public float Balance
         {
-            get { return balance; }
+            get { return _balance; }
         }
 
         
         public float MinimumBalance
         {
-            get { return minimumBalance; }
+            get { return _minimumBalance; }
         }
 
         public class InsufficientFundsException : ApplicationException
