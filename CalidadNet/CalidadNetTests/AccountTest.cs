@@ -40,6 +40,21 @@ namespace CalidadNetTests
         {
             Assert.AreEqual(source.MinimumBalance, 10.00F);
         }
+        [TestMethod]
+        public void If_I_Create_A_Deposit_Account_200_And_I_Get_My_Balance_I_Should_Return_200()
+        {
+            source.Deposit(200F);
+            Assert.AreEqual(source.Balance, 200F);
+        }
+        [TestMethod]
+        [ExpectedException(typeof(Account.InsufficientFundsException))]
+        public void If_I_Create_A_Deposit_Account_200_And_Withdrawal_201_Should_I_Return_Exception ()
+        {
+            source.Deposit(200F);
+            source.Withdraw(201F);
+            Assert.AreEqual(source.Balance, 200F);
+        }
+
 
     }
 }

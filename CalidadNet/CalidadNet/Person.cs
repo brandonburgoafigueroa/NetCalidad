@@ -47,8 +47,7 @@ namespace UnitTest
 
         public bool BuyCar(float Cost)
         {
-            //_cash = _cash + Cost;
-            _cash = _cash - Cost;
+            _cash = _cash + Cost;
             if (_cash >= 0)
             {
                 return true;

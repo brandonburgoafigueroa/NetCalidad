@@ -43,14 +43,21 @@ namespace CalidadNetTests
         {
             
             Assert.AreEqual(PersonWithoutParamethersConstructor.BuyCar(100), false);
+            Assert.AreEqual(PersonWithoutParamethersConstructor.CashBalance, 0);
         }
         [TestMethod]
         public void If_I_Create_A_Person_With_An_Empty_Constructor_And_I_BuyCar_With_A_Price_Of_0_Should_Return_True()
         {
             
             Assert.AreEqual(PersonWithoutParamethersConstructor.BuyCar(0), true);
+            Assert.AreEqual(PersonWithoutParamethersConstructor.CashBalance, 0);
         }
-
+        [TestMethod]
+        public void If_I_Create_A_Person_With_An_Empty_Constructor_And_I_BuyCar_With_A_Price_Of_Negative_Should_Return_False()
+        {
+            Assert.AreEqual(PersonWithoutParamethersConstructor.BuyCar(-1), false);
+            Assert.AreEqual(PersonWithoutParamethersConstructor.CashBalance, 0);
+        }
         [TestMethod]
         public void If_You_Created_One_Person_Per_Builder_With_Parameters_And_Get_Your_Age_Should_Return_The_Age_You_Gave()
         {
@@ -72,11 +79,14 @@ namespace CalidadNetTests
         public void If_You_Created_One_Person_Per_Builder_With_Parameters_And_I_BuyCar_With_A_Price_Of_100_Should_Return_True()
         {
             Assert.AreEqual(PersonWithParamethersConstructor.BuyCar(100), true);
+            Assert.AreEqual(PersonWithParamethersConstructor.CashBalance, 99900);
         }
         [TestMethod]
         public void If_You_Created_One_Person_Per_Builder_With_Parameters_And_I_BuyCar_With_A_Price_Of_100001_Should_Return_False()
         {
             Assert.AreEqual(PersonWithParamethersConstructor.BuyCar(100001), false);
+            Assert.AreEqual(PersonWithParamethersConstructor.CashBalance, 100000);
         }
+       
     }
 }
